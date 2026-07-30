@@ -450,3 +450,443 @@ A próxima parte detalhará:
 * Navegação;
 * Estrutura interna das dungeons;
 * Sistema de geração híbrida das salas.
+
+# 11. Estrutura dos Floors
+
+Cada dungeon será composta por um conjunto de andares (Floors).
+
+Os Floors representam a progressão física da exploração.
+
+Cada novo andar deverá apresentar:
+
+* Maior dificuldade;
+* Novos desafios;
+* Maior risco;
+* Melhores recompensas.
+
+Estrutura conceitual:
+
+```text
+Dungeon
+│
+├── Floor 1
+├── Floor 2
+├── Floor 3
+├── ...
+└── Boss Floor
+```
+
+Cada Floor será independente em sua geração, porém seguirá as regras da dungeon à qual pertence.
+
+---
+
+# 12. Objetivos dos Floors
+
+Cada Floor deverá possuir um papel dentro da experiência do jogador.
+
+Exemplo:
+
+| Floor      | Objetivo                       |
+| ---------- | ------------------------------ |
+| Floor 1    | Introdução da expedição        |
+| Floor 2    | Aumento gradual da dificuldade |
+| Floor 3    | Maior pressão sobre recursos   |
+| Floor 4    | Elite e desafios especiais     |
+| Boss Floor | Confronto final                |
+
+Essa distribuição poderá variar entre diferentes dungeons.
+
+---
+
+# 13. Estrutura das Salas
+
+Cada Floor será composto por diferentes salas.
+
+Exemplo conceitual:
+
+```text
+Floor
+
+Entrada
+   │
+   ▼
+Combate
+   │
+   ▼
+Evento
+   │
+   ├────────────┐
+   ▼            ▼
+Tesouro     Combate
+   │            │
+   └─────┬──────┘
+         ▼
+       Elite
+         │
+         ▼
+      Saída
+```
+
+A ordem das salas poderá variar conforme o gerador híbrido.
+
+---
+
+# 14. Tipos de Salas
+
+O jogo utilizará diferentes categorias de salas.
+
+## Sala Inicial
+
+Primeira sala do Floor.
+
+Responsável por iniciar a exploração.
+
+---
+
+## Sala de Combate
+
+Inicia um combate comum.
+
+Pode conter:
+
+* Um inimigo;
+* Grupo de inimigos;
+* Inimigos especiais.
+
+---
+
+## Sala de Evento
+
+Apresenta decisões ao jogador.
+
+Exemplos:
+
+* Altar misterioso;
+* Comerciante perdido;
+* Armadilha;
+* Porta secreta;
+* Fonte de cura;
+* Escolhas morais.
+
+---
+
+## Sala de Tesouro
+
+Concede recompensas.
+
+Pode conter:
+
+* Ouro;
+* Equipamentos;
+* Consumíveis;
+* Recursos especiais.
+
+---
+
+## Sala Elite
+
+Possui inimigos significativamente mais difíceis.
+
+Recompensas superiores.
+
+Maior risco.
+
+---
+
+## Sala Especial
+
+Salas raras.
+
+Exemplos:
+
+* Biblioteca
+* Santuário
+* Arena
+* Laboratório
+* Prisão
+* Cofre
+
+---
+
+## Sala do Chefe
+
+Última sala da dungeon.
+
+Representa o principal desafio da expedição.
+
+---
+
+# 15. Fluxo de Exploração
+
+O jogador deverá navegar entre salas até alcançar o objetivo da dungeon.
+
+Fluxo básico:
+
+```text
+Entrada
+
+↓
+
+Explorar
+
+↓
+
+Descobrir Sala
+
+↓
+
+Interagir
+
+↓
+
+Resolver Situação
+
+↓
+
+Receber Resultado
+
+↓
+
+Escolher Caminho
+
+↓
+
+Próxima Sala
+```
+
+Esse ciclo se repetirá até que o jogador:
+
+* Derrote o chefe;
+* Seja derrotado;
+* Abandone a expedição.
+
+---
+
+# 16. Sistema de Conexões
+
+As salas serão conectadas formando caminhos.
+
+Exemplo:
+
+```text
+      Entrada
+         │
+         ▼
+      Combate
+      ┌──┴──┐
+      ▼     ▼
+ Evento   Combate
+      │     │
+      └──┬──┘
+         ▼
+      Tesouro
+         │
+         ▼
+       Elite
+         │
+         ▼
+      Boss
+```
+
+Cada conexão representa um caminho válido.
+
+O sistema deverá permitir:
+
+* Caminhos lineares;
+* Bifurcações;
+* Pequenos desvios;
+* Áreas opcionais.
+
+Evitar labirintos excessivamente complexos é um objetivo do MVP.
+
+---
+
+# 17. Exploração Não Linear
+
+Embora exista um objetivo principal, o jogador poderá encontrar caminhos alternativos.
+
+Exemplos:
+
+* Salas opcionais;
+* Eventos escondidos;
+* Tesouros secretos;
+* Atalhos;
+* Pequenas áreas secundárias.
+
+Esses caminhos aumentam a sensação de descoberta.
+
+---
+
+# 18. Modelo Híbrido de Geração
+
+O jogo utilizará geração híbrida.
+
+O fluxo será:
+
+```text
+Selecionar Dungeon
+
+↓
+
+Selecionar Floor
+
+↓
+
+Aplicar Estrutura Base
+
+↓
+
+Sortear Salas
+
+↓
+
+Sortear Eventos
+
+↓
+
+Sortear Inimigos
+
+↓
+
+Sortear Loot
+
+↓
+
+Montar Expedição
+```
+
+A estrutura principal nunca será alterada.
+
+O conteúdo será gerado dinamicamente.
+
+---
+
+# 19. Regras de Geração
+
+O gerador deverá obedecer algumas regras.
+
+## Sempre existir
+
+* Entrada;
+* Caminho até o chefe;
+* Saída válida.
+
+---
+
+## Nunca existir
+
+* Caminhos impossíveis;
+* Salas inacessíveis;
+* Chefes bloqueados;
+* Loops infinitos.
+
+---
+
+## Poderão existir
+
+* Caminhos alternativos;
+* Salas opcionais;
+* Eventos raros;
+* Tesouros escondidos.
+
+---
+
+# 20. Distribuição das Salas
+
+Exemplo conceitual de distribuição:
+
+| Tipo     |      Frequência |
+| -------- | --------------: |
+| Combate  |      Muito Alta |
+| Evento   |           Média |
+| Tesouro  |           Média |
+| Elite    |           Baixa |
+| Especial |     Muito Baixa |
+| Boss     | Uma por Dungeon |
+
+Os valores exatos serão balanceados durante o desenvolvimento.
+
+---
+
+# 21. Escalonamento Interno
+
+A dificuldade aumentará conforme o jogador avança.
+
+Exemplo:
+
+```text
+Floor 1
+★
+
+Floor 2
+★★
+
+Floor 3
+★★★
+
+Floor 4
+★★★★
+
+Boss
+★★★★★
+```
+
+O aumento poderá ocorrer por meio de:
+
+* Mais inimigos;
+* Inimigos mais fortes;
+* Eventos mais difíceis;
+* Menor disponibilidade de recursos.
+
+---
+
+# 22. Objetivo do Gerador
+
+O gerador não deverá criar mapas totalmente aleatórios.
+
+Seu objetivo será:
+
+* Preservar a identidade da dungeon;
+* Garantir boa jogabilidade;
+* Oferecer variedade;
+* Evitar partidas repetitivas.
+
+Cada expedição deverá parecer nova, mas familiar.
+
+---
+
+# 23. Relação com Arquitetura
+
+As definições desta parte originarão futuramente componentes como:
+
+* Dungeon
+* Floor
+* Room
+* RoomType
+* RoomConnection
+* DungeonLayout
+* DungeonGenerator
+* ExplorationFlow
+
+Esses elementos serão modelados na ETAPA 02 — Arquitetura e implementados no Núcleo de Domínio.
+
+---
+
+# Status da Documentação
+
+**Documento:** WORLD_AND_DUNGEON.md
+
+**Parte:** 2 de 3
+
+**Status:** Em desenvolvimento.
+
+A próxima parte concluirá o documento com:
+
+* Eventos;
+* Chefes;
+* Progressão entre Dungeons;
+* Sistema de Descoberta;
+* Escalonamento Global;
+* Relação com as próximas etapas;
+* Critérios de validação;
+* Status final da fase.
