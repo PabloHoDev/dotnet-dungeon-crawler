@@ -1242,3 +1242,354 @@ O aumento gradual da dificuldade deverá proporcionar:
 
 O crescimento da dificuldade deverá acompanhar a evolução do personagem.
 
+# 29. Princípios de Design do Mundo
+
+O mundo do Dungeon Crawler deverá seguir princípios de design que garantam consistência, escalabilidade e uma experiência envolvente ao jogador.
+
+Esses princípios orientarão todas as futuras implementações relacionadas ao sistema de exploração.
+
+---
+
+## 29.1 Consistência
+
+Cada dungeon deverá possuir identidade própria.
+
+O jogador deverá reconhecer rapidamente:
+
+* O bioma;
+* Os tipos de inimigos;
+* O estilo arquitetônico;
+* Os recursos disponíveis;
+* O nível de dificuldade.
+
+Cada região deverá transmitir uma personalidade única.
+
+---
+
+## 29.2 Rejogabilidade
+
+Nenhuma expedição deverá ser exatamente igual à anterior.
+
+Mesmo mantendo uma estrutura fixa, a geração dinâmica deverá proporcionar:
+
+* Diferentes salas;
+* Eventos distintos;
+* Distribuição variável de inimigos;
+* Loot diversificado;
+* Caminhos alternativos.
+
+O objetivo é incentivar múltiplas partidas.
+
+---
+
+## 29.3 Clareza
+
+O jogador deverá compreender facilmente:
+
+* Onde está;
+* Quais caminhos estão disponíveis;
+* Quais riscos existem;
+* Quais objetivos precisa alcançar.
+
+O design do mundo deverá evitar confusão desnecessária.
+
+---
+
+## 29.4 Progressão
+
+Cada nova região deverá representar um avanço perceptível.
+
+O jogador deverá sentir evolução em:
+
+* Complexidade das dungeons;
+* Variedade dos inimigos;
+* Mecânicas apresentadas;
+* Qualidade das recompensas.
+
+---
+
+## 29.5 Escalabilidade
+
+Toda a estrutura deverá permitir a adição de novos conteúdos sem necessidade de modificar os sistemas existentes.
+
+Novas regiões deverão poder ser adicionadas apenas cadastrando novos dados e regras específicas.
+
+---
+
+# 30. Arquitetura Conceitual do Mundo
+
+O mundo será organizado em uma hierarquia clara.
+
+```text id="q1u8h7"
+WORLD
+
+│
+
+├── HUB
+
+│
+├── REGIONS
+
+│     ├── Region
+│     ├── Region
+│     └── Region
+
+│
+└── DUNGEONS
+
+      ├── Dungeon
+      │
+      ├── Floors
+      │
+      ├── Rooms
+      │
+      ├── Events
+      │
+      ├── Enemies
+      │
+      └── Boss
+```
+
+Essa estrutura servirá como base para a modelagem do domínio.
+
+---
+
+# 31. Relação com a Arquitetura
+
+As definições deste documento originarão diversos componentes durante a ETAPA 02.
+
+Exemplos de entidades:
+
+* World
+* Region
+* Dungeon
+* Floor
+* Room
+* Boss
+* Event
+* ExplorationSession
+
+Exemplos de Value Objects:
+
+* Difficulty
+* Biome
+* RoomType
+* DungeonId
+* FloorNumber
+* Reward
+
+Exemplos de Services:
+
+* DungeonGenerator
+* ExplorationService
+* EventService
+* DifficultyScaler
+* RewardGenerator
+
+Exemplos de Factories:
+
+* DungeonFactory
+* RoomFactory
+* EnemyFactory
+* EventFactory
+
+Essa separação permitirá uma arquitetura desacoplada, aderente aos princípios de SOLID e preparada para testes automatizados.
+
+---
+
+# 32. Relação com as Próximas Etapas
+
+As definições deste documento serão utilizadas diretamente nas próximas fases do projeto.
+
+| Etapa                           | Dependência                          |
+| ------------------------------- | ------------------------------------ |
+| ETAPA 02 — Arquitetura          | Modelagem do mundo e das dungeons    |
+| ETAPA 03 — Núcleo de Domínio    | Entidades e regras do domínio        |
+| ETAPA 04 — Personagens          | Navegação e interação com o mundo    |
+| ETAPA 05 — Combate              | Salas de combate e progressão        |
+| ETAPA 06 — Inimigos             | Distribuição por região e bioma      |
+| ETAPA 07 — Inventário e Itens   | Recompensas e loot                   |
+| ETAPA 08 — Dungeon e Exploração | Implementação completa da exploração |
+| ETAPA 09 — Progressão           | Evolução entre regiões               |
+| ETAPA 10 — Persistência         | Salvamento da exploração             |
+| ETAPA 11 — Interface            | Representação visual do mundo        |
+
+Este documento servirá como referência para todas essas etapas.
+
+---
+
+# 33. Resumo Conceitual
+
+O fluxo principal do mundo do jogo será:
+
+```text id="a5k3mw"
+HUB
+
+↓
+
+Selecionar Dungeon
+
+↓
+
+Entrar na Dungeon
+
+↓
+
+Explorar Floors
+
+↓
+
+Descobrir Salas
+
+↓
+
+Combater
+
+↓
+
+Eventos
+
+↓
+
+Loot
+
+↓
+
+Boss
+
+↓
+
+Recompensas
+
+↓
+
+Retorno ao HUB
+
+↓
+
+Preparação
+
+↓
+
+Nova Expedição
+```
+
+Esse ciclo representa a principal experiência do jogador.
+
+---
+
+# 34. Critérios de Validação da Fase
+
+A FASE 05 será considerada concluída quando:
+
+* A estrutura geral do mundo estiver definida;
+* O Hub estiver contextualizado;
+* As regiões estiverem especificadas;
+* Os biomas estiverem definidos;
+* A estrutura das dungeons estiver documentada;
+* Os floors estiverem definidos;
+* Os tipos de salas estiverem especificados;
+* O fluxo de exploração estiver definido;
+* O modelo híbrido de geração estiver documentado;
+* O sistema de eventos estiver descrito;
+* O sistema de chefes estiver definido;
+* A progressão entre dungeons estiver especificada;
+* O sistema de descoberta estiver definido;
+* O escalonamento de dificuldade estiver documentado;
+* A relação com a arquitetura estiver identificada;
+* A relação com as próximas etapas estiver registrada.
+
+---
+
+# 35. Checking da Fase
+
+| Item                               | Status |
+| ---------------------------------- | ------ |
+| Objetivo da fase definido          | ✅      |
+| Estrutura do mundo documentada     | ✅      |
+| Hub definido                       | ✅      |
+| Regiões definidas                  | ✅      |
+| Biomas definidos                   | ✅      |
+| Estrutura das dungeons definida    | ✅      |
+| Floors definidos                   | ✅      |
+| Tipos de salas definidos           | ✅      |
+| Fluxo de exploração definido       | ✅      |
+| Modelo híbrido aprovado            | ✅      |
+| Sistema de eventos definido        | ✅      |
+| Sistema de chefes definido         | ✅      |
+| Progressão entre dungeons definida | ✅      |
+| Sistema de descoberta definido     | ✅      |
+| Escalonamento documentado          | ✅      |
+| Relação com arquitetura registrada | ✅      |
+| Dependências identificadas         | ✅      |
+| Documento revisado                 | ✅      |
+
+**Resultado do Checking:**
+
+**FASE 05 — APROVADA**
+
+---
+
+# 36. Status da Documentação
+
+**Documento:** `WORLD_AND_DUNGEON.md`
+
+**Etapa:** ETAPA 00 — Visão e Definição do Produto
+
+**Fase:** FASE 05 — Mundo e Dungeon
+
+**Versão:** 1.0
+
+**Status:** ✅ Concluída
+
+---
+
+# 37. Atualização do Roadmap
+
+## ETAPA 00 — Visão e Definição do Produto
+
+```text id="m9t6r1"
+✅ FASE 01 — Product Vision
+📄 PRODUCT_VISION.md
+
+✅ FASE 02 — Game Concept
+📄 GAME_CONCEPT.md
+
+✅ FASE 03 — Core Gameplay
+📄 CORE_GAMEPLAY.md
+
+✅ FASE 04 — Game Mechanics
+📄 GAME_MECHANICS.md
+
+✅ FASE 05 — World and Dungeon
+📄 WORLD_AND_DUNGEON.md
+
+⬜ FASE 06 — Personagens
+⬜ FASE 07 — Inimigos
+⬜ FASE 08 — Progressão
+⬜ FASE 09 — MVP
+⬜ FASE 10 — Requisitos Funcionais e Não Funcionais
+
+⬜ CHECKING FINAL DA ETAPA 00
+```
+
+---
+
+# 38. Considerações Finais
+
+A FASE 05 estabelece toda a base conceitual do mundo do Dungeon Crawler.
+
+Com a conclusão deste documento, o projeto passa a possuir uma definição clara sobre:
+
+* Organização do mundo;
+* Estrutura das dungeons;
+* Modelo híbrido de geração;
+* Exploração;
+* Eventos;
+* Chefes;
+* Progressão entre regiões;
+* Escalonamento de dificuldade.
+
+Essas definições servirão como referência para a modelagem arquitetural, implementação do domínio e desenvolvimento dos sistemas de exploração nas próximas etapas.
+
+A próxima fase da ETAPA 00 será dedicada à definição completa dos **Personagens**, estabelecendo seus atributos, classes, evolução, capacidades e papel dentro da experiência do jogador.
