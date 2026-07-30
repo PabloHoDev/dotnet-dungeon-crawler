@@ -890,3 +890,355 @@ A próxima parte concluirá o documento com:
 * Relação com as próximas etapas;
 * Critérios de validação;
 * Status final da fase.
+
+# 24. Sistema de Eventos
+
+Os eventos representam situações especiais encontradas durante a exploração da dungeon.
+
+Seu objetivo é interromper o ciclo tradicional de exploração e combate, oferecendo ao jogador momentos de tomada de decisão.
+
+Os eventos deverão aumentar a variedade da experiência e incentivar múltiplas partidas.
+
+---
+
+## 24.1 Objetivos dos Eventos
+
+Os eventos possuem cinco objetivos principais.
+
+* Criar imprevisibilidade;
+* Estimular decisões estratégicas;
+* Recompensar exploração;
+* Introduzir elementos narrativos;
+* Variar o ritmo da partida.
+
+Os eventos não deverão existir apenas para conceder recompensas.
+
+Cada evento deverá apresentar pelo menos uma consequência relevante.
+
+---
+
+## 24.2 Estrutura Conceitual
+
+Todo evento seguirá o mesmo fluxo conceitual.
+
+```text
+EVENTO
+
+↓
+
+SITUAÇÃO
+
+↓
+
+DECISÃO
+
+↓
+
+CONSEQUÊNCIA
+
+↓
+
+CONTINUAÇÃO DA EXPLORAÇÃO
+```
+
+Esse modelo facilita a padronização da arquitetura do sistema de eventos.
+
+---
+
+## 24.3 Categorias de Eventos
+
+Inicialmente os eventos serão classificados nas seguintes categorias.
+
+### Eventos Positivos
+
+Oferecem vantagens ao jogador.
+
+Exemplos:
+
+* Fonte de cura;
+* Baú especial;
+* Comerciante;
+* Altar sagrado;
+* NPC aliado.
+
+---
+
+### Eventos Negativos
+
+Apresentam riscos imediatos.
+
+Exemplos:
+
+* Armadilhas;
+* Maldições;
+* Emboscadas;
+* Perda de recursos;
+* Salas instáveis.
+
+---
+
+### Eventos Neutros
+
+Dependem da decisão do jogador.
+
+Exemplos:
+
+* Porta misteriosa;
+* Alavanca desconhecida;
+* Estátua antiga;
+* Artefato mágico;
+* Escolha entre caminhos.
+
+---
+
+### Eventos Especiais
+
+Eventos extremamente raros.
+
+Exemplos:
+
+* Mini Boss oculto;
+* Sala secreta;
+* Tesouro lendário;
+* NPC raro;
+* Portal para área especial.
+
+---
+
+# 25. Sistema de Chefes
+
+Cada dungeon possuirá um chefe principal.
+
+O chefe representa o maior desafio daquela região.
+
+Ele também representa o encerramento da expedição.
+
+---
+
+## 25.1 Objetivos
+
+Os chefes deverão:
+
+* Testar o domínio das mecânicas aprendidas;
+* Representar o ápice da dificuldade;
+* Possuir identidade própria;
+* Ser memoráveis.
+
+---
+
+## 25.2 Características
+
+Cada chefe possuirá:
+
+* Nome;
+* História;
+* Aparência própria;
+* Mecânicas exclusivas;
+* Ataques especiais;
+* Recompensas únicas.
+
+Exemplo conceitual:
+
+```text
+CHEFE
+
+↓
+
+Introdução
+
+↓
+
+Combate
+
+↓
+
+Fases
+
+↓
+
+Derrota
+
+↓
+
+Recompensa
+
+↓
+
+Conclusão da Dungeon
+```
+
+---
+
+## 25.3 Estrutura das Lutas
+
+As batalhas contra chefes deverão ser diferentes dos combates comuns.
+
+O objetivo é criar desafios mais estratégicos.
+
+Os chefes poderão possuir:
+
+* Múltiplas fases;
+* Mudanças de comportamento;
+* Habilidades exclusivas;
+* Alterações no campo de batalha.
+
+Esses elementos tornam cada encontro mais memorável.
+
+---
+
+# 26. Progressão entre Dungeons
+
+O jogador não iniciará diretamente nas áreas mais difíceis.
+
+O avanço ocorrerá gradualmente.
+
+Fluxo conceitual:
+
+```text
+Dungeon Inicial
+
+↓
+
+Dungeon Intermediária
+
+↓
+
+Dungeon Avançada
+
+↓
+
+Dungeon Final
+```
+
+Cada nova dungeon introduzirá:
+
+* Novos inimigos;
+* Novos desafios;
+* Novos biomas;
+* Novas recompensas;
+* Novas mecânicas.
+
+---
+
+## 26.1 Desbloqueio
+
+Novas dungeons poderão ser desbloqueadas por diferentes critérios.
+
+Exemplos:
+
+* Derrotar um chefe;
+* Alcançar determinado nível;
+* Encontrar um artefato;
+* Completar uma missão.
+
+Essas regras serão detalhadas posteriormente.
+
+---
+
+# 27. Sistema de Descoberta
+
+A exploração deverá incentivar a curiosidade do jogador.
+
+Nem todo conteúdo será apresentado imediatamente.
+
+O jogador poderá descobrir:
+
+* Salas ocultas;
+* Eventos secretos;
+* Tesouros raros;
+* NPCs especiais;
+* Caminhos alternativos.
+
+Esse sistema aumenta significativamente a sensação de exploração.
+
+---
+
+## 27.1 Recompensa pela Exploração
+
+Explorar deverá ser vantajoso.
+
+O jogador poderá receber:
+
+* Ouro;
+* Equipamentos;
+* Recursos;
+* Informações;
+* Itens raros;
+* Conteúdo opcional.
+
+Quanto maior a exploração, maiores poderão ser as recompensas.
+
+---
+
+# 28. Escalonamento Global de Dificuldade
+
+O jogo deverá aumentar sua dificuldade progressivamente.
+
+Esse aumento ocorrerá em diferentes níveis.
+
+---
+
+## Escalonamento por Região
+
+Cada região será mais difícil que a anterior.
+
+Exemplo:
+
+```text
+Cripta
+
+↓
+
+Floresta
+
+↓
+
+Mina
+
+↓
+
+Castelo
+
+↓
+
+Ruínas
+```
+
+---
+
+## Escalonamento por Dungeon
+
+Dentro da mesma região, cada dungeon poderá possuir níveis diferentes de dificuldade.
+
+---
+
+## Escalonamento por Floor
+
+Cada novo andar deverá apresentar maior dificuldade.
+
+---
+
+## Escalonamento por Sala
+
+Mesmo dentro do mesmo andar, determinadas salas poderão representar desafios maiores.
+
+Exemplos:
+
+* Sala Elite;
+* Eventos especiais;
+* Mini Boss;
+* Sala do Chefe.
+
+---
+
+## Objetivo do Escalonamento
+
+O aumento gradual da dificuldade deverá proporcionar:
+
+* Sensação de evolução;
+* Novos desafios;
+* Necessidade de planejamento;
+* Melhor utilização das mecânicas do jogo.
+
+O crescimento da dificuldade deverá acompanhar a evolução do personagem.
+
