@@ -271,3 +271,65 @@ O objetivo é demonstrar a capacidade de projetar, desenvolver, testar, document
 ## 📜 Licença
 
 A licença do projeto será definida durante a configuração inicial do repositório.
+
+
+🎯 O que quero que o Dungeon Crawler demonstre
+
+No final, alguém olhando seu GitHub deve conseguir perceber:
+
+              DUNGEON CRAWLER
+                     │
+        ┌────────────┼────────────┐
+        ↓            ↓            ↓
+       C#          Unity       GitHub
+        │            │            │
+        ↓            ↓            ↓
+       POO       Gameplay      Workflow
+        │            │            │
+        └────────────┼────────────┘
+                     ↓
+                Arquitetura
+                     │
+             ┌───────┴───────┐
+             ↓               ↓
+           SOLID           Tests
+             │               │
+             └───────┬───────┘
+                     ↓
+             Engenharia de
+               Software
+
+E depois:
+
+                 Engenharia
+                 de Software
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+     Design         Testing        DevOps
+        │              │              │
+      SOLID         Unit Tests      CI/CD
+      Patterns      Integration     Docker
+      Clean         Coverage        Release
+
+      Python
+  ↓
+ Isso conversa diretamente com o posicionamento que você quer construir no portifólio
+  
+Automação / Data / ETL
+
+C# / Java
+  ↓
+POO / Jogos / Arquitetura / Backend
+
+TypeScript
+  ↓
+Web / APIs / Full Stack
+
+C++ / Rust
+  ↓
+Sistemas / Performance
+
+          ↓
+
+ENGENHARIA DE SOFTWARE
