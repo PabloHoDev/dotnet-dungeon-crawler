@@ -423,16 +423,73 @@
 
 # 🎯 MARCO ATUAL
 
-## ETAPA 00 — 100% CONCLUÍDA
+ETAPA 00 — Visão e Definição
+████████████████████ 100% ✅
 
-```text
-FASE 01  ✅
-FASE 02  ✅
-FASE 03  ✅
-FASE 04  ✅
-FASE 05  ✅
-FASE 06  ✅
-FASE 07  ✅
-FASE 08  ✅
-FASE 09  ✅
-FASE 10  ✅
+ETAPA 01 — Setup e Repositório
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 02 — Arquitetura
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 03 — Núcleo de Domínio
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 04 — Personagens
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 05 — Combate
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 06 — Inimigos
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 07 — Inventário e Itens
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 08 — Dungeon e Exploração
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 09 — Progressão
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 10 — Persistência
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 11 — Interface
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 12 — Testes
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 13 — Qualidade e Observabilidade
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 14 — Dockerização
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 15 — CI/CD
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 16 — Documentação
+
+░░░░░░░░░░░░░░░░░░░░   0%
+
+ETAPA 17 — GitHub e Release
+
+░░░░░░░░░░░░░░░░░░░░   0%
