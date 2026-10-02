@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonCrawler.Domain\DungeonCrawler.Domain.csproj" />
+    <ProjectReference Include="..\DungeonCrawler.Application\DungeonCrawler.Application.csproj" />
+  </ItemGroup>
+
+</Project>
