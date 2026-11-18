@@ -1,0 +1,59 @@
+📋 ETAPA 00 — ROADMAP
+
+Vamos dividir esta etapa em fases:
+
+🔲 FASE 01 — Visão Geral do Produto
+
+Definir a identidade e a proposta do Dungeon Crawler.
+
+🔲 FASE 02 — Conceito e Experiência do Jogador
+
+Definir como será a experiência de jogar.
+
+🔲 FASE 03 — Core Gameplay
+
+Definir o ciclo principal de gameplay.
+
+🔲 FASE 04 — Mecânicas
+
+Definir combate, exploração, inventário, habilidades e progressão.
+
+🔲 FASE 05 — Mundo e Dungeon
+
+Definir estrutura das dungeons, salas, inimigos e exploração.
+
+🔲 FASE 06 — Personagens
+
+Definir protagonista, atributos, classes e evolução.
+
+🔲 FASE 07 — Inimigos
+
+Definir tipos, comportamentos e dificuldade.
+
+🔲 FASE 08 — Sistema de Progressão
+
+Definir XP, níveis, equipamentos e evolução.
+
+🔲 FASE 09 — Sistemas Complementares
+
+Definir save/load, configurações, áudio e outros sistemas.
+
+🔲 FASE 10 — Escopo do MVP
+
+Definir exatamente o que entra e o que fica fora da primeira versão.
+
+🔲 FASE 11 — Requisitos
+
+Definir requisitos funcionais e não funcionais.
+
+🔲 FASE 12 — Stack Tecnológica
+
+Formalizar C#, Unity e demais tecnologias.
+
+🔲 FASE 13 — Critérios de Sucesso
+
+Definir quando poderemos considerar o projeto concluído.
+
+🔲 FASE 14 — Documento Final da ETAPA 00
+
+Consolidar todas as decisões em documentação oficial.
