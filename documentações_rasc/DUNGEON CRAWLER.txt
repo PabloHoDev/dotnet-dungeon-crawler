@@ -1,0 +1,24 @@
+| Etapa  | Tema                         | Status       |
+| ------ | ---------------------------- | ------------ |
+| **00** | Visão e Definição do Produto | 🔲 A iniciar |
+| **01** | Setup e Repositório          | 🔲           |
+| **02** | Arquitetura                  | 🔲           |
+| **03** | Núcleo de Domínio            | 🔲           |
+| **04** | Personagens                  | 🔲           |
+| **05** | Combate                      | 🔲           |
+| **06** | Inimigos                     | 🔲           |
+| **07** | Inventário e Itens           | 🔲           |
+| **08** | Dungeon e Exploração         | 🔲           |
+| **09** | Progressão                   | 🔲           |
+| **10** | Persistência                 | 🔲           |
+| **11** | Interface                    | 🔲           |
+| **12** | Testes                       | 🔲           |
+| **13** | Qualidade e Observabilidade  | 🔲           |
+| **14** | Dockerização                 | 🔲           |
+| **15** | CI/CD                        | 🔲           |
+| **16** | Documentação                 | 🔲           |
+| **17** | GitHub e Release             | 🔲           |
+
+
+
+#0054B8
